@@ -20,7 +20,7 @@ def getCursorCoords():
 def getHostname():
     return socket.gethostname()
 
-def handle_client(client_socket):
+def handleClient(client_socket):
     print(f"Client connected: {client_socket.getpeername()}")
 
     connected = True
@@ -67,7 +67,7 @@ def main():
     try:
         while True:
             client_socket, address = server_socket.accept()
-            handle_client(client_socket)
+            handleClient(client_socket)
     except KeyboardInterrupt:
         print("Server shutting down.")
         server_socket.close()
